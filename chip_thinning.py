@@ -1,12 +1,12 @@
 from math import sqrt
-from time import sleep
 
-CT = float(input("\nDesired chip thickness:"))
-D = float(input("\nTool Diameter:"))
-RDOC = float(input("\nRadial depth of cut:"))
+def feed_per_tooth(CT, D, RDOC):
+    "Returns inches per tooth given desired chip thickness and radial depth of cut."
+    return(CT * D) / (2 * sqrt((D * RDOC) - RDOC*RDOC))
 
-feed_per_tooth = (CT * D) / (2 * sqrt((D * RDOC) - RDOC*RDOC))
-
-print("\nFeed per tooth:\n\n",round(feed_per_tooth,5),"\n")
-
-sleep(30)
+if __name__ == "__main__":
+    while True:
+        CT = float(input("\nDesired chip thickness:"))
+        D = float(input("\nTool Diameter:"))
+        RDOC = float(input("\nRadial depth of cut:"))
+        print("\nFeed per tooth:\n\n", round(feed_per_tooth(CT, D, RDOC), 5), "\n")

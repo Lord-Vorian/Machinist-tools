@@ -7,9 +7,8 @@ def depth_dia(tool_dia, DOC):
     return 2 * sqrt(radius**2 - (radius - DOC)**2)
 
 if __name__ == "__main__":
-    from time import sleep
-    tool_dia = input("\nDiameter of ball EM: ")
-    DOC = input("\nDepth of cut: ")
-    dia_of_cut = round(depth_dia(tool_dia, DOC),5)
-    print("\nDiameter of cut at this depth:\n", dia_of_cut,"\n\n")
-    sleep(60)
+    while True:
+        tool_dia = input("\nDiameter of ball EM: ")
+        DOC = input("\nDepth of cut: ")
+        dia_of_cut = round(depth_dia(tool_dia, DOC),5)
+        print("\nDiameter of cut at this depth:\n", dia_of_cut,"\n\n")
